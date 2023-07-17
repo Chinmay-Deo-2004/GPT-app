@@ -1,0 +1,406 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.wrapper{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+}
+
+/* LOGIN SECTION */
+.login{
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.input{
+    display: flex;
+    flex-direction: column;
+
+    width: 20%;
+    height: 50%;
+    border-radius: 0.75em;
+
+    background-color: rgb(255, 240, 179);
+
+}
+
+#send-btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#login-btn{
+    padding: 1em;
+    margin: 1em;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: rgb(77, 255, 77);
+    border: solid rgb(0, 102, 0) 1px;
+    border-radius: 0.5em;
+
+    font-family: sans-serif;
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+#otp-btn{
+    padding: 1em;
+    margin: 1em;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: rgb(77, 255, 77);
+    border: solid rgb(0, 102, 0) 1px;
+    border-radius: 0.5em;
+
+    font-family: sans-serif;
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+#phone{
+    border-radius: 0.5em;
+    margin: 1em;
+    padding: 1em;   
+}
+
+#otp{
+    border-radius: 0.5em;
+    margin: 1em;
+    padding: 1em;
+    display: none;   
+}
+
+.accept-otp{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#login{
+    padding: 1em;
+    margin: 1em;
+
+    display: none;
+    justify-content: center;
+    align-items: center;
+
+    background-color: rgb(77, 255, 77);
+    border: solid rgb(0, 102, 0) 1px;
+    border-radius: 0.5em;
+
+    font-family: sans-serif;
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+
+
+/* LEFT SECTION */
+
+.left{
+    width: 20%;
+    height: 100%;
+    background-color: rgb(255, 240, 179);
+
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.newChatButton{
+    padding: 2em;
+    margin: 1em;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: rgb(77, 255, 77);
+    border: solid rgb(0, 102, 0) 1px;
+    border-radius: 0.5em;
+
+    font-weight: bold;
+    font-family: sans-serif;
+
+    cursor: pointer;
+}
+
+.history{
+    padding: 1em;
+    display: flex;
+    flex-direction: column;
+
+    height: 100%;
+}
+
+.prev-chat{
+    padding: 1em;
+    margin: 1em;
+    width: 90%;
+    max-height: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: rgb(77, 255, 77);
+    border: solid rgb(0, 102, 0) 1px;
+    border-radius: 0.5em;
+
+    font-family: sans-serif;
+    /* overflow-wrap: break-word; */
+    flex-wrap: wrap;
+    cursor: pointer;
+}
+
+
+/* RIGHT SECTION  */
+
+/* DECISION PART */
+
+.decision{
+    width: 80%;
+    height: 100%;
+    background-color: white;
+
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.title{
+
+    display: flex;
+    justify-content: center;
+
+    font-family: sans-serif;
+    font-weight: bold;
+    font-size: 2em;
+
+    margin: 1em;
+}
+
+.btn-container{
+    display: flex;
+    justify-content: center;
+}
+
+.footer{
+    margin: 1em;
+    padding: 1em;
+}
+
+.dec-btn{
+    padding: 1em;
+    margin: 1em;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: rgb(77, 255, 77);
+    border: solid rgb(0, 102, 0) 1px;
+    border-radius: 0.5em;
+
+    font-family: sans-serif;
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+/* ASK PART */
+
+.ask{
+
+    width: 80%;
+    height: 100%;
+    background-color: white;
+
+    display: none;
+    /* display: flex;  */
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.selectLang{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+
+    padding: 1em;
+}
+
+.lang-btn{
+    padding: 1em;
+    margin: 1em;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: rgb(77, 255, 77);
+    border: solid rgb(0, 102, 0) 1px;
+    border-radius: 0.5em;
+
+    font-family: sans-serif;
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+.conversation{
+    height: 100%;
+}
+
+.conv-ele{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+
+    padding: 1em;
+    margin-top: 1em;
+
+    width: 100%;
+
+    background-color: rgba(255, 240, 179, 0.4);
+}
+
+.question{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+
+    padding: 1em;
+    margin-top: 1em;
+
+    width: 100%;
+
+    background-color: rgba(255, 240, 179, 0.4);
+}
+
+.answer{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+
+    padding: 1em;
+    margin-top: 1em;
+
+    width: 100%;
+
+    background-color: rgba(255, 240, 179, 0.4);
+}
+
+.a{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+
+    padding: 1em;
+    margin-top: 1em;
+
+    width: 100%;
+
+    background-color: rgba(255, 240, 179, 0.4);
+}
+
+.q{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+
+    padding: 1em;
+    margin-top: 1em;
+
+    width: 100%;
+
+    background-color: rgba(255, 240, 179, 0.4);
+}
+
+.ask-input{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin: 1em 0;
+}
+
+#rec-btn{
+    padding: 1em;
+    margin: 1em;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: rgb(77, 255, 77);
+    border: solid rgb(0, 102, 0) 1px;
+    border-radius: 0.5em;
+
+    font-family: sans-serif;
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+/* TYPE PART */
+.type{
+    width: 80%;
+    height: 100%;
+    background-color: white;
+
+    display: none;
+    /* display: flex; overwritten later */
+    flex-direction: column;
+    justify-content: space-between;
+
+}
+
+.type-input{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin: 1em 0;
+}
+
+#text-input{
+    background: rgb(255, 240, 179);
+    width: 50%;
+    border: none;
+    height: 3em;
+    border-radius: 0.5em;
+    padding: 0.5em;
+    margin: 0 1em;
+}
+
+#submit-btn{
+    background: rgb(255, 240, 179);
+    border: none;
+    padding: 1em;
+    border-radius: 100%;
+    font-family: sans-serif;
+    font-weight: 600;
+}

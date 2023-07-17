@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GPT</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="wrapper">
+
+        <div class="login">
+            <div class="title"> FGPT </div>
+
+            <div class="input">
+                <input type="number" id="phone" placeholder="Phone number">
+
+                <div id="send-btn">
+                    <button id="otp-btn">Send OTP</button>
+                </div>
+
+                <div class="accept-otp">
+                    <input type="number" id="otp" placeholder="Enter OTP"> 
+                    <button id="login">Login</button>
+                </div>
+
+
+            </div>
+
+            <div class="footer">Footer stuff</div>
+        </div>
+
+        <div class="left">
+        
+        <div class="newChat">
+            <div class="newChatButton"> + New Chat</div>
+
+            <hr>
+
+            <!--IDEA: add a date tag here-->
+    
+            <div class="history"> 
+                <!-- <div class="prev-chat"></div> -->
+            </div>
+        </div>
+
+
+        <div class="account"> account</div>
+
+        </div>
+
+        <div class="decision">
+
+            <div class="title"> FGPT </div>
+
+            <div class="btn-container">
+                <button class="dec-btn" id="ask-btn"> Ask with voice command </button>
+                <button class="dec-btn" id="type-btn"> Type question </button>
+            </div>
+
+            <div class="footer">Footer content</div>
+
+        </div>
+
+        <div class="ask">
+            <div class="selectLang">
+                <div>Select Your Language: </div>
+                <button class="lang-btn" id="eng-btn">English</button>
+                <button class="lang-btn" id="hindi-btn">हिंदी</button>
+                <button class="lang-btn" id="punjabi-btn">ਪੰਜਾਬੀ</button>
+                <button class="lang-btn" id="urdu-btn">اردو</button>
+                <button class="lang-btn" id="pashto-btn">پښتو</button>
+                <button class="lang-btn" id="sindhi-btn">سنڌي</button>
+            </div>
+
+            <div class="conversation">
+            </div>
+
+            <div class="ask-input">
+                <button id="rec-btn">Ask Question</button>
+            </div>
+
+        </div>
+
+        <div class="type">
+            <div class="conversation2">
+            </div>
+
+            <div class="type-input">
+                <input type="text" id="text-input">
+                <button id="submit-btn">Ask</button>
+            </div>
+        </div>
+    </div>
+
+
+
+    <script src="script.js"> </script>
+</body>
+</html>
