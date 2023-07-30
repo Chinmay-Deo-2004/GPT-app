@@ -286,6 +286,7 @@ async function getResponse() {
     try{
         const response = await fetch('https://api.openai.com/v1/chat/completions', options)
         const data = await response.json();
+        console.log(data);
 
         //conversation mechanism in ASK PART
         const questionElement = document.createElement("div");
@@ -328,36 +329,36 @@ async function getResponse() {
 recognition.onspeechend = () => {
     recognition.stop();
 
-    /*setTimeout(() => {
+    setTimeout(() => {
     getResponse();
-    }, 1000);*/
+    }, 1000);
 
-    fetch("https://localhost:5500/api/v1/getresponse", {
-        method: "POST",
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-            question: question.textContent,
-        })
-    })
-    .then(response => response.json())
-    .then(data => {
+    // fetch("https://localhost:5500/api/v1/getresponse", {
+    //     method: "POST",
+    //     headers: {
+    //         'Content-Type': 'application/json',
+    //     },
+    //     body: JSON.stringify({
+    //         question: question.textContent,
+    //     })
+    // })
+    // .then(response => response.json())
+    // .then(data => {
 
-        const questionElement = document.createElement("div");
-        questionElement.className = "question";
-        questionElement.textContent = `${question.textContent}`;
-        conversation.appendChild(questionElement);
+    //     const questionElement = document.createElement("div");
+    //     questionElement.className = "question";
+    //     questionElement.textContent = `${question.textContent}`;
+    //     conversation.appendChild(questionElement);
 
-        const answerElement = document.createElement("div");
-        answerElement.className = "answer";
-        answerElement.textContent = data.choices[0].message.content;
-        conversation.appendChild(answerElement);
+    //     const answerElement = document.createElement("div");
+    //     answerElement.className = "answer";
+    //     answerElement.textContent = data.choices[0].message.content;
+    //     conversation.appendChild(answerElement);
 
-    })
-    .catch( (err) => {console.log(err);
-    alert("Error occurred: " + err);
-    });
+    // })
+    // .catch( (err) => {console.log(err);
+    // alert("Error occurred: " + err);
+    // });
 
 
 
@@ -381,40 +382,40 @@ submit_btn.onclick = async () => {
     if(query.value){
         question.textContent = query.value;
 
-        //getResponse();
+        setTimeout(() => {
+            getResponse();
+        }, 1000);
 
-        fetch("http://localhost:5500/api/v1/getresponse", {
-            credentials: 'include',
-            method: "POST",
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({
-                question: question.textContent,
-            })
-        })
-        // .then(response => response.json())
-        .then(data => { 
-                const q = document.createElement("div");
-                q.className = "q";
-                q.textContent = `Me: ${question.textContent}`;
-                conversation2.appendChild(q);
+    //     fetch("http://localhost:5500/api/v1/getresponse", {
+    //         credentials: 'include',
+    //         method: "POST",
+    //         headers: {
+    //             'Content-Type': 'application/json',
+    //         },
+    //         body: JSON.stringify({
+    //             question: question.textContent,
+    //         })
+    //     })
+    //     // .then(response => response.json())
+    //     .then(data => { 
+    //             const q = document.createElement("div");
+    //             q.className = "q";
+    //             q.textContent = `Me: ${question.textContent}`;
+    //             conversation2.appendChild(q);
     
-                const a = document.createElement("div");
-                a.className = "a";
-                a.textContent = data;
-                conversation2.appendChild(a);
-        })
-        .catch(err => console.log(err));
+    //             const a = document.createElement("div");
+    //             a.className = "a";
+    //             a.textContent = data;
+    //             conversation2.appendChild(a);
+    //     })
+    //     .catch(err => console.log(err));
 
-    }
-    else
-    {
-        alert("Please enter a query");
-    }
+    // }
+    // else
+    // {
+    //     alert("Please enter a query");
+    // }
     // q.textContent = `Me: ${query.value}`;
 
 }
-
-
-
+}
