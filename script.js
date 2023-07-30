@@ -264,12 +264,12 @@ let convocount = 0;
 
 async function getResponse() {
 
-    API_KEY = "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";
+
 
     const options = {
         method: "POST",
         headers: {
-            'authorization': `Bearer ${API_KEY}`,
+            'authorization': `Bearer ${process.env.API_KEY}`,
             'Content-Type': 'application/json'
         },
         body: JSON.stringify({
