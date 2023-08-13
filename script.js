@@ -195,27 +195,6 @@ type_btn.onclick = () => {
 
 //LEFT PART HANDLERS AND FETCHING HISTORY
 
-// const prevChat = document.querySelectorAll(".prev-chat");
-
-
-// prevChat.onclick = () => {
-//     console.log("clicked");
-//     const cId = prevChat.id;
-//     fetch("http://localhost:5500/api/v1/getConversation", {
-//         method: "POST",
-//         headers: {
-//             "Content-Type": "application/json",
-//         },
-//         body: JSON.stringify({
-//             convoId: cId
-//         })
-//     })
-//     .then((response) => response.json())
-//     .then((data) => {
-//         console.log(data);
-//     })
-// }
-
 console.log("fetching chat history")
 const prevChats = document.querySelectorAll(".prev-chat");
 console.log("heres the chats", prevChats);
@@ -333,35 +312,6 @@ recognition.onspeechend = () => {
     getResponse();
     }, 1000);
 
-    // fetch("https://localhost:5500/api/v1/getresponse", {
-    //     method: "POST",
-    //     headers: {
-    //         'Content-Type': 'application/json',
-    //     },
-    //     body: JSON.stringify({
-    //         question: question.textContent,
-    //     })
-    // })
-    // .then(response => response.json())
-    // .then(data => {
-
-    //     const questionElement = document.createElement("div");
-    //     questionElement.className = "question";
-    //     questionElement.textContent = `${question.textContent}`;
-    //     conversation.appendChild(questionElement);
-
-    //     const answerElement = document.createElement("div");
-    //     answerElement.className = "answer";
-    //     answerElement.textContent = data.choices[0].message.content;
-    //     conversation.appendChild(answerElement);
-
-    // })
-    // .catch( (err) => {console.log(err);
-    // alert("Error occurred: " + err);
-    // });
-
-
-
 }
 
 //error handling
@@ -385,37 +335,6 @@ submit_btn.onclick = async () => {
         setTimeout(() => {
             getResponse();
         }, 1000);
-
-    //     fetch("http://localhost:5500/api/v1/getresponse", {
-    //         credentials: 'include',
-    //         method: "POST",
-    //         headers: {
-    //             'Content-Type': 'application/json',
-    //         },
-    //         body: JSON.stringify({
-    //             question: question.textContent,
-    //         })
-    //     })
-    //     // .then(response => response.json())
-    //     .then(data => { 
-    //             const q = document.createElement("div");
-    //             q.className = "q";
-    //             q.textContent = `Me: ${question.textContent}`;
-    //             conversation2.appendChild(q);
-    
-    //             const a = document.createElement("div");
-    //             a.className = "a";
-    //             a.textContent = data;
-    //             conversation2.appendChild(a);
-    //     })
-    //     .catch(err => console.log(err));
-
-    // }
-    // else
-    // {
-    //     alert("Please enter a query");
-    // }
-    // q.textContent = `Me: ${query.value}`;
 
 }
 }
