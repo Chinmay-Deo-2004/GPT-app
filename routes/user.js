@@ -11,6 +11,12 @@ express().use(cors());
 const {sendotp, login} = require("../controllers/Auth");
 const {auth, isAskable, options} = require("../middlewares/auth");
 
+express().use(function(req, res, next) {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    next();
+})
+
 router.post("/sendotp", sendotp);
 router.post("/login", login);
 

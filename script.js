@@ -1,3 +1,4 @@
+
 const SpeechRecognition = window.SpeechRecognition || webkitSpeechRecognition;
 const SpeechRecognitionEvent = window.SpeechRecognitionEvent || webkitSpeechRecognitionEvent;
 
@@ -138,8 +139,6 @@ const rec_btn = document.querySelector("#rec-btn");
 
 eng_btn.onlclick = () => {
     eng_btn.style.backgroundColor = "blue";
-    // recognition.lang = "en-US";
-    // alert("English language selected");
     console.log("English language selected");
     selectLang.style.display = "none";
 }
@@ -155,27 +154,6 @@ punjabi_btn.onclick = () => {
     alert("ਤੁਸੀਂ ਪੰਜਾਬੀ ਭਾਸ਼ਾ ਦੀ ਚੋਣ ਕੀਤੀ ਹੈ");
     selectLang.style.display = "none";
 }
-
-urdu_btn.onclick = () => {
-    recognition.lang = "ur-PK";
-    alert("آپ نے اردو زبان کا انتخاب کیا ہے");
-    selectLang.style.display = "none";
-}
-
-pashto_btn.onclick = () => {
-    recognition.lang = "ps-AF";
-    alert("تاسو پښتو ژبې د ټاکنې انتخاب کړی");
-    selectLang.style.display = "none";
-}
-
-sindhi_btn.onclick = () => {
-    recognition.lang = "sd-PK";
-    alert("توهان سنڌي ٻولي جي انتخاب ڪيل آهيو");
-    selectLang.style.display = "none";
-}
-
-//DONE CHANGING LANGUAGES
-
 
 //  DECISION PART BUTTON HANDLERS
 
@@ -193,32 +171,8 @@ type_btn.onclick = () => {
     left.style.display = "flex";
 }
 
-//LEFT PART HANDLERS AND FETCHING HISTORY
-
-// const prevChat = document.querySelectorAll(".prev-chat");
-
-
-// prevChat.onclick = () => {
-//     console.log("clicked");
-//     const cId = prevChat.id;
-//     fetch("http://localhost:5500/api/v1/getConversation", {
-//         method: "POST",
-//         headers: {
-//             "Content-Type": "application/json",
-//         },
-//         body: JSON.stringify({
-//             convoId: cId
-//         })
-//     })
-//     .then((response) => response.json())
-//     .then((data) => {
-//         console.log(data);
-//     })
-// }
-
-console.log("fetching chat history")
+//CHAT HISTORY FETCHING AND DISPLAY (UNDER DEVELOPMENT)
 const prevChats = document.querySelectorAll(".prev-chat");
-console.log("heres the chats", prevChats);
 
 prevChats.forEach( (prevChat) => {
     prevChat.addEventListener("click", () => {
@@ -239,8 +193,6 @@ prevChats.forEach( (prevChat) => {
         })
     })
 })
-
-
 
 //ASK PART BUTTON HANDLERS
 
@@ -264,12 +216,12 @@ let convocount = 0;
 
 async function getResponse() {
 
-
+    API_KEY = "sk_test_5
 
     const options = {
         method: "POST",
         headers: {
-            'authorization': `Bearer ${process.env.API_KEY}`,
+            'authorization': `Bearer ${API_KEY}`,
             'Content-Type': 'application/json'
         },
         body: JSON.stringify({
@@ -329,36 +281,36 @@ async function getResponse() {
 recognition.onspeechend = () => {
     recognition.stop();
 
-    setTimeout(() => {
-    getResponse();
-    }, 1000);
+    // setTimeout(() => {
+    // getResponse();
+    // }, 1000);
 
-    // fetch("https://localhost:5500/api/v1/getresponse", {
-    //     method: "POST",
-    //     headers: {
-    //         'Content-Type': 'application/json',
-    //     },
-    //     body: JSON.stringify({
-    //         question: question.textContent,
-    //     })
-    // })
-    // .then(response => response.json())
-    // .then(data => {
+    fetch("https://localhost:5500/api/v1/getresponse", {
+        method: "POST",
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+            question: question.textContent,
+        })
+    })
+    .then(response => response.json())
+    .then(data => {
 
-    //     const questionElement = document.createElement("div");
-    //     questionElement.className = "question";
-    //     questionElement.textContent = `${question.textContent}`;
-    //     conversation.appendChild(questionElement);
+        const questionElement = document.createElement("div");
+        questionElement.className = "question";
+        questionElement.textContent = `${question.textContent}`;
+        conversation.appendChild(questionElement);
 
-    //     const answerElement = document.createElement("div");
-    //     answerElement.className = "answer";
-    //     answerElement.textContent = data.choices[0].message.content;
-    //     conversation.appendChild(answerElement);
+        const answerElement = document.createElement("div");
+        answerElement.className = "answer";
+        answerElement.textContent = data.choices[0].message.content;
+        conversation.appendChild(answerElement);
 
-    // })
-    // .catch( (err) => {console.log(err);
-    // alert("Error occurred: " + err);
-    // });
+    })
+    .catch( (err) => {console.log(err);
+    alert("Error occurred: " + err);
+    });
 
 
 
