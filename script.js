@@ -171,7 +171,9 @@ type_btn.onclick = () => {
     left.style.display = "flex";
 }
 
-//CHAT HISTORY FETCHING AND DISPLAY (UNDER DEVELOPMENT)
+//LEFT PART HANDLERS AND FETCHING HISTORY
+
+console.log("fetching chat history")
 const prevChats = document.querySelectorAll(".prev-chat");
 
 prevChats.forEach( (prevChat) => {
@@ -216,7 +218,7 @@ let convocount = 0;
 
 async function getResponse() {
 
-    API_KEY = "sk_test_5
+    API_KEY = "sk_test_5"
 
     const options = {
         method: "POST",
@@ -337,37 +339,6 @@ submit_btn.onclick = async () => {
         setTimeout(() => {
             getResponse();
         }, 1000);
-
-    //     fetch("http://localhost:5500/api/v1/getresponse", {
-    //         credentials: 'include',
-    //         method: "POST",
-    //         headers: {
-    //             'Content-Type': 'application/json',
-    //         },
-    //         body: JSON.stringify({
-    //             question: question.textContent,
-    //         })
-    //     })
-    //     // .then(response => response.json())
-    //     .then(data => { 
-    //             const q = document.createElement("div");
-    //             q.className = "q";
-    //             q.textContent = `Me: ${question.textContent}`;
-    //             conversation2.appendChild(q);
-    
-    //             const a = document.createElement("div");
-    //             a.className = "a";
-    //             a.textContent = data;
-    //             conversation2.appendChild(a);
-    //     })
-    //     .catch(err => console.log(err));
-
-    // }
-    // else
-    // {
-    //     alert("Please enter a query");
-    // }
-    // q.textContent = `Me: ${query.value}`;
 
 }
 }
